@@ -1,6 +1,6 @@
 # Reference — the single-specialist ICM standard
 
-The yardstick WHETSTONE measures a target against. A single-specialist ICM agent is a folder where **each file does one job**. This file describes what "healthy" looks like so you can name where a target diverges from it.
+The yardstick WHETSTONE measures a target against. ICM ("interpretable context methodology") treats the folder as architecture: drop it into a Claude project and Claude *becomes* the specialist. A single-specialist ICM agent is a folder where **each file does one job**. This file describes what "healthy" looks like so you can name where a target diverges from it.
 
 ## The five files and the one job each does
 
@@ -40,4 +40,4 @@ These map one-to-one onto the six lenses in `lenses.md`.
 
 ## Note on the ICM method itself
 
-ICM ("interpretable context methodology") treats the **folder as architecture**: drop it into a Claude project and Claude *becomes* the specialist. The power — and the failure mode — is that the folder is the whole mind. Anything the builder "knows" but didn't write down is not in the agent. WHETSTONE's entire leverage is finding the gap between what the builder knows and what the folder actually says.
+The power — and the failure mode — of treating the folder as architecture is that the folder is the whole mind. Anything the builder "knows" but didn't write down is not in the agent. WHETSTONE's entire leverage is finding the gap between what the builder knows and what the folder actually says.

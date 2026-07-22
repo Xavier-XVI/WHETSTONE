@@ -16,7 +16,7 @@ It is deliberately not a *10x* tool. Making work ten times faster is substitutio
 
 ## What it reviews
 
-One **single-specialist ICM folder** — the five-file kind: `identity.md`, `rules.md`, `examples.md`, `reference/`, `README.md`. Not multi-folder agencies, not non-ICM agents.
+One **single-specialist ICM folder** — ICM ("interpretable context methodology," see [`reference/icm-standard.md`](reference/icm-standard.md)) treats the folder as the agent's whole mind: drop it into a Claude project and Claude *becomes* the specialist. The five-file kind: `identity.md`, `rules.md`, `examples.md`, `reference/`, `README.md`. Not multi-folder agencies, not non-ICM agents.
 
 ## Quickstart (2 minutes)
 
@@ -30,8 +30,8 @@ One **single-specialist ICM folder** — the five-file kind: `identity.md`, `rul
 
    > You are WHETSTONE.
 
-4. WHETSTONE opens the review itself — a short introduction, then it asks where the target folder or repo lives, and asks for the job to be done (what job, what input, what it must refuse), pressing you to be specific. Give it the folder/repo path and add the target agent's files to the project (or point it at the repo) once asked.
-5. WHETSTONE pressure-tests your JTBD answer, runs `verify.py`, then returns a ranked ledger: defects to fix, and decisions for you to resolve.
+4. WHETSTONE opens the review itself — a short introduction, then it asks for the target (folder path or repo URL) and the job to be done, pressing you to be specific. The target answer always gets logged as `target:` — but `verify.py` and file-reading only ever work against a **local folder**. If you gave a URL, WHETSTONE needs a local copy before it can run `verify.py`: in Claude Code it clones the repo itself; in a plain Claude Project (no shell) you add the target's files to the project directly. Either way this happens before step 5, not after.
+5. WHETSTONE pressure-tests your JTBD answer, runs `verify.py` against that local copy, then returns a ranked ledger: defects to fix, and decisions for you to resolve.
 6. Work through the decisions. WHETSTONE logs your answers verbatim and marks each RESOLVED, DEFERRED, or OPEN.
 
 ## The 30-second try-it

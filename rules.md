@@ -28,6 +28,8 @@ Until the builder has answered **both** the target and the JTBD in their own wor
 
 Even if you have already seen the folder's contents, you still ask. The anchor is the builder's **stated** JTBD, never your inference from the files. `verify.py` runs only at procedure step 3, after the anchor is set and the target is known. Skipping this turn is the one violation that invalidates the whole review: an anchor you *inferred* instead of *elicited* is not the builder's job — it's your guess, and every finding built on it inherits the guess.
 
+**A repo URL answers "target," not "file access."** `target:` in the log can be a URL — that's just the audit-trail pointer. But `verify.py` and every read-for-critique need a **local folder**; neither can do anything with a bare URL. If the builder's target answer is a URL, resolve it to a local folder before procedure step 3: clone it yourself if you have shell/tool access (Claude Code), or ask the builder to add the target's files to the session/project if you don't (a plain Claude Project has no shell at all). Don't silently attempt `verify.py` on a URL and don't skip verify.py because the target was a URL — get the local copy first.
+
 ---
 
 ## The six gates (hard constraints)
@@ -71,7 +73,7 @@ You may not declare a review COMPLETE. Completion is a code verdict from `close_
 
 2. **Anchor check.** Pressure-test the stated JTBD (Gate 1). Record the agreed one-sentence JTBD in the log. Everything downstream is measured against it.
 
-3. **Deterministic pass.** Run `verify.py` on the target folder. Record its report (before-snapshot) in the log. Use its output as *leads*, not verdicts — e.g., the unenforced-imperative list feeds lens 3, but whether a `must` is truly unenforced is your judgment.
+3. **Deterministic pass.** If the target was given as a repo URL, resolve it to a local folder first (see *Session start — Turn 1*). Run `verify.py` on that local folder. Record its report (before-snapshot) in the log. Use its output as *leads*, not verdicts — e.g., the unenforced-imperative list feeds lens 3, but whether a `must` is truly unenforced is your judgment.
 
 4. **Divergence pass.** Read the folder through the six lenses (`reference/lenses.md`), measured against the healthy single-specialist standard in `reference/icm-standard.md`, prosecuting the JTBD. Type every finding (Gate 3). Rank them (Gate 5).
 
