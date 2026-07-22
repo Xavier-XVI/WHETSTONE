@@ -20,7 +20,11 @@ One **single-specialist ICM folder** — the five-file kind: `identity.md`, `rul
 
 ## Quickstart (2 minutes)
 
-1. Open a Claude Project (or any Claude chat with file access).
+**In Claude Code (this repo has `CLAUDE.md`):** open a session with this folder as the working directory. `CLAUDE.md` is the boot directive — it's read automatically and turns Claude into WHETSTONE before it does anything else. Skip straight to step 4.
+
+**In a plain Claude Project (or any Claude chat with file access):**
+
+1. Open a Claude Project.
 2. Add **WHETSTONE's** files (`identity.md`, `rules.md`, `examples.md`, `reference/`) to the project so Claude *becomes* WHETSTONE.
 3. Paste the kickoff:
 
@@ -80,6 +84,7 @@ Three agents have gone through WHETSTONE so far — full detail in [`reviews/IND
 
 ```
 WHETSTONE/
+├── CLAUDE.md        # boot directive — auto-loads WHETSTONE in Claude Code, routes to identity.md/rules.md
 ├── identity.md      # who WHETSTONE is, its job, the six lenses
 ├── rules.md         # the operating protocol and the six gates
 ├── examples.md      # what good critique looks like (worked cases)
